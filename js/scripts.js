@@ -6,15 +6,16 @@
 		dataType: "jsonp",
 		data: {
 			api_key: "hbizcfvbrwvtk55vvj68ohdm",
-			location: "Toronto,Ontario",
-			keywords:"handmade"
+			location: "Calgary",
+			keywords:"handmade",
+			who_made: "i_did"
 		},
-		success: function(){
-		console.log("It worked!");}
+		// success: function(){
+		// console.log("It worked!");}
 	});
 
-	// $.when(etsyCall).then(function(res) {
-	// 	var etsyResult = res;
-	// 	console.log(etsyResult);
-	// 	// app.displayVenues(venueResult);
-	// });
+	$.when(etsyCall).then(function(res) {
+		var etsyResult = res;
+		console.log(etsyResult);
+		// app.displayVenues(venueResult);
+	});

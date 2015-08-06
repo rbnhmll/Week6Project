@@ -1,6 +1,6 @@
 var gulp = require('gulp');
-var sass=require('gulp-sass');
-var cancat = require('gulp-concat');
+var sass = require('gulp-sass');
+var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
 
 

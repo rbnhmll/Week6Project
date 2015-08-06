@@ -1,5 +1,3 @@
-// app = [];	
-
 	var etsyCall = $.ajax({
 		url: "https://openapi.etsy.com/v2/listings/active.js",
 		type: "GET",

@@ -1,6 +1,10 @@
 var app = {};
 app.location = "";
 app.keywords = {};
+app.offset = "";
+app.etsyResult = {};
+app.masterItem = {};
+app.image = {};
 
 
 app.init = function() {
@@ -32,18 +36,34 @@ app.ajaxCall = function() {
 			location: app.location,
 			keywords: app.keywords,
 			who_made: "i_did",
+			limit: 12,
+			offset: 0,
 			includes: "MainImage"
 		},
-		// success: function(){
-		// console.log("It worked!");}
 	});
 
 	$.when(etsyCall).then(function(res) {
-		var etsyResult = res;
+		var etsyResult = res.results;
 		console.log(etsyResult);
-		// app.displayVenues(venueResult);
+		app.runResults(etsyResult);
 	});
 };
+
+app.runResults = function(etsyResult) {
+	for (var i = 0; i < etsyResult.length; i++) {
+	//Define variables for API call stuff.
+		var masterItem = etsyResult[i];
+		console.log(masterItem);
+		var image = masterItem.MainImage.url_fullxfull;
+		console.log(image);
+		// app.itemName = app.Results.
+		// app.itemPrice = app.Results.
+		// app.itemDescription = app.Results.
+		// app.link = app.Results.	
+	}
+};
+
+
 
 $(function(){
 	app.init();

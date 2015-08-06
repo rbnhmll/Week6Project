@@ -1,0 +1,25 @@
+{
+  "name": "etsyproject",
+  "version": "1.0.0",
+  "description": "week6projectapp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarahkennedy/Week6Project.git"
+  },
+  "author": "Tarah Kennedy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tarahkennedy/Week6Project/issues"
+  },
+  "homepage": "https://github.com/tarahkennedy/Week6Project#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-sass": "^2.0.4"
+  }
+}

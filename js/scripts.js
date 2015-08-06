@@ -56,12 +56,20 @@ app.runResults = function(etsyResult) {
 		console.log(masterItem);
 		var image = masterItem.MainImage.url_fullxfull;
 		console.log(image);
-		// app.itemName = app.Results.
-		// app.itemPrice = app.Results.
-		// app.itemDescription = app.Results.
-		// app.link = app.Results.	
-	}
+		var name = masterItem.title;
+		console.log(name);
+		var price = masterItem.price;
+		console.log(price);
+		var description = masterItem.description;
+		console.log(description);
+		var link = masterItem.url;
+		console.log(link);
+		var $etsyContainer = $('<div>');
+$(".results-container").append($etsyContainer.append("<img src=" + image +  ">" + "<h3>" + name + "</h3>" + "<p>" + description + "," + "</p>" + "<p>" + price + "</p>" + "<a href='" + link + " target='_blank'>" + "Buy on Etsy" + "</a>" ));
+	} 
+	//practice again!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*************
 };
+
 
 
 

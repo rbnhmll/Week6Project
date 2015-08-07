@@ -5,6 +5,7 @@ app.offset = "";
 app.etsyResult = {};
 app.masterItem = {};
 app.image = {};
+app.offset = 0;
 
 
 app.init = function() {
@@ -16,6 +17,7 @@ app.grabInputs = function() {
 	
 	$(".submit").on("click", function(evnt){
 		evnt.preventDefault();
+		$(".results-container").empty();
 		app.location = $(".city").val();
 		app.keywords = $(".keyword").val();
 		// console.log(app.location);
@@ -36,12 +38,13 @@ app.ajaxCall = function() {
 			keywords: app.keywords,
 			who_made: "i_did",
 			limit: 12,
-			offset: 0,
+			offset: app.offsetMultiplier,
 			includes: "MainImage"
 		},
 	});
 
 	$.when(etsyCall).then(function(res) {
+		$(".nav-controls").removeClass("hide");
 		var etsyResult = res.results;
 		// console.log(etsyResult);
 		app.runResults(etsyResult);
@@ -53,7 +56,7 @@ app.runResults = function(etsyResult) {
 	for (var i = 0; i < etsyResult.length; i++) {
 	//Define variables for API call stuff.
 		var masterItem = etsyResult[i];
-		console.log(masterItem);
+		// console.log(masterItem);
 		var image = masterItem.MainImage.url_fullxfull;
 		var name = $('<h3>').text(masterItem.title);
 		var price = $("<p>").text(masterItem.price);
@@ -65,13 +68,18 @@ app.runResults = function(etsyResult) {
 		itemImage.css('backgroundImage', 'url(' + image + ')');
 		var $etsyContainer = $('<div>').addClass("etsy-container");
 		// $etsyContainer.append(item);
-		$etsyContainer.append(itemImage, name, description, price, etsyLink)
+		$etsyContainer.append(itemImage, name, description, price, etsyLink);
 	$(".results-container").append($etsyContainer);
-	};
-// $('<.img-responsive>').css('background-image', 'url(' + image + ')'); 
-	//practice again!!!!!!!!!!!!<img src=" + image +  ">!!!!!!!!!!!!!!!!!!!!!!!!!*************
+	}
 };
 
+$(".show-more").on("click", function(){
+	app.offset += 1;
+	app.offsetMultiplier = app.offset * 12;
+	// console.log(app.offsetMultiplier);
+	// console.log(app.offset);
+	app.ajaxCall();
+});
 
 
 

@@ -7,6 +7,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 //Colours
 $orange: #EC6333;
+$black: #222;
 $grey: #E4E4E1;
 $lightblue: #EAF6FC;
 $lightgrey: #FCFCFC;
@@ -22,6 +23,7 @@ $sansSerif: 'PT Sans', sans-serif;
 html {
 	font-size: 16px;
 	font-family: $sansSerif;
+	color: $black;
 }
 
 body {
@@ -73,22 +75,23 @@ input[type=text] {
 }
 
 .etsy-container {
+	display: flex;
+	width: 32%;
 	margin-top: 10px;
 	background: $lightgrey;
-	border: 1px solid $grey;
-	border-radius: 3px;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
 	padding: 1%;
-	width: 32%;
+	border-radius: 5px;
+	border: 1px solid $grey;
+	text-align: center;
+	flex-direction: column;
 	word-wrap: break-word;
-	height
 }
 
 .etsy-description {
-	max-height: 300px;
+	max-height: 200px;
 	overflow-y: auto;
+	border: 1px solid $grey;
+	text-align: left;
 }
 
 .img-responsive {
@@ -96,8 +99,14 @@ input[type=text] {
   height: auto;
   display: block;
 	img {
+		// width: auto;
+	 //  max-width: 150px;
+	 //  height: auto;
+	 //  max-height: 100px;
+
+
 		width: 100%;
-		height: auto;
+		// height: auto;
 		display: block;
 	}
 }

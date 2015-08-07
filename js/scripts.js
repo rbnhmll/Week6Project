@@ -22,7 +22,6 @@ app.grabInputs = function() {
 		console.log(app.keywords);
 		app.ajaxCall();
 	});
-
 };
 
 

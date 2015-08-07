@@ -223,3 +223,19 @@ input.submit {
   .img-responsive img {
     width: 100%;
     display: block; }
+
+.hide {
+  display: none; }
+
+.nav-controls {
+  text-align: center; }
+
+.show-more {
+  display: block;
+  margin: 20px auto; }
+
+.backToTop {
+  font-size: 2.5rem;
+  color: #EC6333;
+  margin: 0 auto;
+  display: block; }

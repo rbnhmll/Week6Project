@@ -7,6 +7,7 @@ app.image = {};
 app.offset = 0;
 
 
+
 app.init = function() {
 	app.grabInputs();
 };
@@ -73,12 +74,12 @@ app.runResults = function(etsyResult) {
 		var description = $('<p>').addClass('etsy-description').text(masterItem.description);
 		var link = masterItem.url;
 		etsyLink = $("<a>").attr('href', link).text('Buy on Etsy');
-		// var div = $('<div>').addClass('img-responsive').css('backgroundImage', 'url(' + image + ')');
+		var makeDiv = $("<div>").addClass("priceBuy");
 		var itemImage = $('<div>').addClass('img-responsive');
 		itemImage.css('backgroundImage', 'url(' + image + ')');
 		var $etsyContainer = $('<div>').addClass("etsy-container");
 		// $etsyContainer.append(item);
-		$etsyContainer.append(itemImage, name, description, price, etsyLink).fadeIn(1000);
+		$etsyContainer.append(itemImage, name, description, makeDiv.append(price, etsyLink) ).fadeIn(1000);
 	$(".results-container").append($etsyContainer);
 	}
 };

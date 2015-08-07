@@ -22,7 +22,6 @@ app.grabInputs = function() {
 		console.log(app.keywords);
 		app.ajaxCall();
 	});
-
 };
 
 
@@ -64,8 +63,8 @@ app.runResults = function(etsyResult) {
 		console.log(description);
 		var link = masterItem.url;
 		console.log(link);
-		var $etsyContainer = $('<div>');
-$(".results-container").append($etsyContainer.append("<img src=" + image +  ">" + "<h3>" + name + "</h3>" + "<p>" + description + "," + "</p>" + "<p>" + price + "</p>" + "<a href='" + link + " target='_blank'>" + "Buy on Etsy" + "</a>" ));
+		var $etsyContainer = $('<div>').addClass("etsy-container");
+$(".results-container").append($etsyContainer.append("<div class='img-responsive'><img src=" + image +  "><div>" + "<h3>" + name + "</h3>" + "<p class='etsy-description'>" + description + "</p>" + "<p>" + price + "</p>" + "<a href='" + link + " target='_blank'>" + "Buy on Etsy" + "</a>" ));
 	} 
 	//practice again!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*************
 };

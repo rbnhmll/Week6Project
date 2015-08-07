@@ -133,7 +133,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 html {
   font-size: 16px;
-  font-family: "PT Sans", sans-serif; }
+  font-family: "PT Sans", sans-serif;
+  color: #222; }
 
 body {
   background: #E4E4E1; }
@@ -166,10 +167,34 @@ input {
   padding: 5px; }
 
 .results-container {
-  background: #FCFCFC;
-  height: 100px;
   display: flex;
-  flex-wraper: wrap; }
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: space-between; }
 
 .etsy-container {
-  width: calc(100% / 3); }
+  display: flex;
+  width: 32%;
+  margin-top: 10px;
+  background: #FCFCFC;
+  padding: 1%;
+  border-radius: 5px;
+  border: 1px solid #E4E4E1;
+  text-align: center;
+  flex-direction: column;
+  word-wrap: break-word; }
+
+.etsy-description {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #E4E4E1;
+  text-align: left; }
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block; }
+  .img-responsive img {
+    width: 100%;
+    display: block; }

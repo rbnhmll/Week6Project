@@ -7,6 +7,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 //Colours
 $orange: #EC6333;
+$black: #222;
 $grey: #E4E4E1;
 $lightblue: #EAF6FC;
 $lightgrey: #FCFCFC;
@@ -22,6 +23,7 @@ $sansSerif: 'PT Sans', sans-serif;
 html {
 	font-size: 16px;
 	font-family: $sansSerif;
+	color: $black;
 }
 
 body {
@@ -65,12 +67,46 @@ input[type=text] {
 }
 
 .results-container {
-	background: $lightgrey;
-	height: 100px;
 	display: flex;
-	flex-wraper: wrap;
+	flex-direction: row;
+	flex-wrap: wrap;
+	max-width: 100%;
+	justify-content: space-between;
 }
 
 .etsy-container {
-	width: calc(100% / 3);
+	display: flex;
+	width: 32%;
+	margin-top: 10px;
+	background: $lightgrey;
+	padding: 1%;
+	border-radius: 5px;
+	border: 1px solid $grey;
+	text-align: center;
+	flex-direction: column;
+	word-wrap: break-word;
+}
+
+.etsy-description {
+	max-height: 200px;
+	overflow-y: auto;
+	border: 1px solid $grey;
+	text-align: left;
+}
+
+.img-responsive {
+	max-width: 100%;
+  height: auto;
+  display: block;
+	img {
+		// width: auto;
+	 //  max-width: 150px;
+	 //  height: auto;
+	 //  max-height: 100px;
+
+
+		width: 100%;
+		// height: auto;
+		display: block;
+	}
 }

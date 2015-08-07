@@ -65,12 +65,39 @@ input[type=text] {
 }
 
 .results-container {
-	background: $lightgrey;
-	height: 100px;
 	display: flex;
-	flex-wraper: wrap;
+	flex-direction: row;
+	flex-wrap: wrap;
+	max-width: 100%;
+	justify-content: space-between;
 }
 
 .etsy-container {
-	width: calc(100% / 3);
+	margin-top: 10px;
+	background: $lightgrey;
+	border: 1px solid $grey;
+	border-radius: 3px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	padding: 1%;
+	width: 32%;
+	word-wrap: break-word;
+	height
+}
+
+.etsy-description {
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+.img-responsive {
+	max-width: 100%;
+  height: auto;
+  display: block;
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
 }

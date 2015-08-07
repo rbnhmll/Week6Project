@@ -7,6 +7,7 @@ app.image = {};
 app.offset = 0;
 
 
+
 app.init = function() {
 	app.grabInputs();
 };
@@ -16,12 +17,23 @@ app.grabInputs = function() {
 	
 	$(".submit").on("click", function(evnt){
 		evnt.preventDefault();
-		$(".results-container").empty();
-		app.location = $(".city").val();
-		app.keywords = $(".keyword").val();
-		// console.log(app.location);
-		// console.log(app.keywords);
-		app.ajaxCall();
+		if ($(".city").val() == "" && $(".keyword").val() == "") {
+			alert("Please fill in your city and keyword(s).");
+		}
+		else if ($(".city").val() == "") {
+			alert("Please fill in your city.")
+		}
+		else if ($(".keyword").val() == "") {
+			alert("Please fill in your search keywords.");
+		}
+		else {
+			$(".results-container").empty();
+			app.location = $(".city").val();
+			app.keywords = $(".keyword").val();
+			// console.log(app.location);
+			// console.log(app.keywords);
+			app.ajaxCall();
+		}
 	});
 };
 
@@ -69,21 +81,19 @@ function truncate(name, charLength){
 		var masterItem = etsyResult[i];
 		// console.log(masterItem);
 		var image = masterItem.MainImage.url_fullxfull;
+
 		var name = $('<h3>').text(truncate(masterItem.title, 20));
 		var price = $("<p>").text(masterItem.price);
 		var description = $('<p>').addClass('etsy-description').text(truncate(masterItem.description, 150));
 		console.log(masterItem);
-
-
-
 		var link = masterItem.url;
 		etsyLink = $("<a>").attr('href', link).text('Buy on Etsy');
-		// var div = $('<div>').addClass('img-responsive').css('backgroundImage', 'url(' + image + ')');
+		var makeDiv = $("<div>").addClass("priceBuy");
 		var itemImage = $('<div>').addClass('img-responsive');
 		itemImage.css('backgroundImage', 'url(' + image + ')');
 		var $etsyContainer = $('<div>').addClass("etsy-container");
 		// $etsyContainer.append(item);
-		$etsyContainer.append(itemImage, name, description, price, etsyLink);
+		$etsyContainer.append(itemImage, name, description, makeDiv.append(price, etsyLink) ).fadeIn(1000);
 	$(".results-container").append($etsyContainer);
 	}
 };
@@ -92,8 +102,6 @@ function truncate(name, charLength){
 $(".show-more").on("click", function(){
 	app.offset += 1;
 	app.offsetMultiplier = app.offset * 12;
-	// console.log(app.offsetMultiplier);
-	// console.log(app.offset);
 	app.ajaxCall();
 });
 

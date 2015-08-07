@@ -27,23 +27,35 @@ html {
 }
 
 body {
-	background: $grey;
+	
 }
+
 
 h1,
 h2,
-h3,
 h4,
 h5 {
 	font-family: $serif;
 }
 
-h3{
-	max-height: 20%;
+
+h1 {
+    color: $lightgrey;
+    margin: 0;
+    margin-left: 2%;
+   font-size: 3rem;
+}
+
+h3 {
+	font-family: $sansSerif;
+	color: #666666;
+	font-size: 18px;
+	text-transform: uppercase;
+	text-align: left;
 }
 
 header.main {
-	background: #fff;
+	background: $lightgrey;
 	box-shadow: 0 1px 3px #ccc;
 	.wrapper {
 	padding: 20px 0;
@@ -53,6 +65,7 @@ header.main {
 .wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
+
 }
 
 .banner-container {
@@ -61,9 +74,15 @@ header.main {
 
 .logo-container {
 	display: flex;
+	flex-wrap: wrap;
 	align-content: center;
-	justify-content: left;
+	justify-content: center;
 	width: 40%;
+}
+
+.logo-container p{
+	width: 100%;
+	text-align: center;
 }
 
 .submit-form {
@@ -82,7 +101,6 @@ header.main {
 	font-size: 15px;
   	font-weight: bold;
   	margin: 0;
-
 }
 
 .city, .keyword {
@@ -105,7 +123,6 @@ header.main {
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-
 }
 
 img.logo-image {
@@ -140,6 +157,7 @@ input.submit {
 	flex-wrap: wrap;
 	max-width: 100%;
 	justify-content: space-between;
+
 }
 
 .etsy-container {
@@ -155,11 +173,38 @@ input.submit {
 	word-wrap: break-word;
 }
 
+.priceBuy {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.etsy-container p {
+	color: #85c655;
+}
+
+.etsy-container a {
+	text-decoration: none;
+	color: #f56400;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.etsy-container a:hover {
+	text-decoration: underline;
+	color: #f56400;
+}
+
 .etsy-description {
 	max-height: 200px;
 	overflow-y: auto;
 	border: 1px solid $grey;
 	text-align: left;
+}
+
+p.etsy-description {
+	font-size: 15px;
+	color: #B2B2B2;
 }
 
 .img-responsive {
@@ -187,6 +232,7 @@ input.submit {
 }
 
 .show-more {
+	margin: 25px 0;
 	font-family: Arial,Helvetica,sans-serif;
 	color: white;
 	border: 1px solid;
@@ -194,8 +240,7 @@ input.submit {
 	background: -webkit-linear-gradient(top, #98d0e0 2%, #68b8d1 8%, #4fa9c6 58%, #4fa9c6 95%, #4ca4c0);
 	cursor: pointer;
 	font-size: 15px;
-  	font-weight: bold;
-  	margin: 0;
-  	border-radius: 4px;
-  	padding: 4.8px;
+	font-weight: bold;
+	border-radius: 4px;
+	padding: 4.8px;
 }

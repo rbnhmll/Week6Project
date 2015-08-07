@@ -136,18 +136,27 @@ html {
   font-family: "PT Sans", sans-serif;
   color: #222; }
 
-body {
-  background: #E4E4E1; }
-
 h1,
 h2,
-h3,
 h4,
 h5 {
   font-family: "Times new roman"; }
 
+h1 {
+  color: #FCFCFC;
+  margin: 0;
+  margin-left: 2%;
+  font-size: 3rem; }
+
+h3 {
+  font-family: "PT Sans", sans-serif;
+  color: #666666;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: left; }
+
 header.main {
-  background: #fff;
+  background: #FCFCFC;
   box-shadow: 0 1px 3px #ccc; }
   header.main .wrapper {
     padding: 20px 0; }
@@ -161,9 +170,14 @@ header.main {
 
 .logo-container {
   display: flex;
+  flex-wrap: wrap;
   align-content: center;
-  justify-content: left;
+  justify-content: center;
   width: 40%; }
+
+.logo-container p {
+  width: 100%;
+  text-align: center; }
 
 .submit-form {
   width: 60%; }
@@ -241,6 +255,24 @@ input.submit {
   flex-direction: column;
   word-wrap: break-word; }
 
+.priceBuy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.etsy-container p {
+  color: #85c655; }
+
+.etsy-container a {
+  text-decoration: none;
+  color: #f56400;
+  text-transform: uppercase;
+  font-size: 12px; }
+
+.etsy-container a:hover {
+  text-decoration: underline;
+  color: #f56400; }
+
 .etsy-description {
   max-height: 200px;
   height: 150px;
@@ -253,6 +285,10 @@ input.submit {
   padding-top: 5%;
    }
 
+p.etsy-description {
+  font-size: 15px;
+  color: #B2B2B2; }
+
 .img-responsive {
   max-width: 100%;
   max-height: 200px;
@@ -260,10 +296,6 @@ input.submit {
   display: block;
   background-size: cover;
   background-position: center; }
-<<<<<<< HEAD
-  .img-responsive img {
-    width: 100%;
-    display: block; }
 
 .hide {
   display: none; }
@@ -271,18 +303,14 @@ input.submit {
 .nav-controls {
   text-align: center; }
 
-.show-more {
-  display: block;
-  margin: 20px auto; }
-
 .backToTop {
   font-size: 2.5rem;
   color: #EC6333;
   margin: 0 auto;
   display: block; }
-=======
 
 .show-more {
+  margin: 25px 0;
   font-family: Arial,Helvetica,sans-serif;
   color: white;
   border: 1px solid;
@@ -291,10 +319,5 @@ input.submit {
   cursor: pointer;
   font-size: 15px;
   font-weight: bold;
-  margin: 0;
   border-radius: 4px;
   padding: 4.8px; }
-
-
-
->>>>>>> 1d8553fedecbd1e5c229e0545bb99e1fed331947

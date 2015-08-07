@@ -38,16 +38,6 @@ h5 {
 	font-family: $serif;
 }
 
-h1 {
-	color: $orange;
-	margin: 0;
-}
-
-.wrapper {
-	max-width: 1000px;
-	margin: 0 auto;
-}
-
 header.main {
 	background: #fff;
 	box-shadow: 0 1px 3px #ccc;
@@ -55,6 +45,37 @@ header.main {
 	padding: 20px 0;
 	}
 }
+
+.wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.banner-container {
+	display: flex;
+}
+
+.logo-container {
+	display: flex;
+	align-content: center;
+	justify-content: left;
+	width: 40%;
+}
+
+.submit-form {
+	width: 60%;
+}
+
+img.logo-image {
+	height: 40px;
+}
+
+h1 {
+	color: $orange;
+	margin: 0;
+	margin-left: 5%;
+}
+
 
 input {
 	border-radius: 4px;
@@ -64,6 +85,11 @@ input {
 }
 
 input[type=text] {
+	width: 40%;
+}
+
+input.submit {
+	margin: 0;
 }
 
 .results-container {
@@ -96,8 +122,11 @@ input[type=text] {
 
 .img-responsive {
 	max-width: 100%;
-  height: auto;
+  max-height: 200px;
+  min-height: 200px;
   display: block;
+  background-size: cover;
+  background-position: center;
 	img {
 		// width: auto;
 	 //  max-width: 150px;

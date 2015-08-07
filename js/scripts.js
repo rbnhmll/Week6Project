@@ -18,8 +18,8 @@ app.grabInputs = function() {
 		evnt.preventDefault();
 		app.location = $(".city").val();
 		app.keywords = $(".keyword").val();
-		console.log(app.location);
-		console.log(app.keywords);
+		// console.log(app.location);
+		// console.log(app.keywords);
 		app.ajaxCall();
 	});
 };
@@ -43,30 +43,33 @@ app.ajaxCall = function() {
 
 	$.when(etsyCall).then(function(res) {
 		var etsyResult = res.results;
-		console.log(etsyResult);
+		// console.log(etsyResult);
 		app.runResults(etsyResult);
 	});
 };
 
 app.runResults = function(etsyResult) {
+
 	for (var i = 0; i < etsyResult.length; i++) {
 	//Define variables for API call stuff.
 		var masterItem = etsyResult[i];
 		console.log(masterItem);
 		var image = masterItem.MainImage.url_fullxfull;
-		console.log(image);
-		var name = masterItem.title;
-		console.log(name);
-		var price = masterItem.price;
-		console.log(price);
-		var description = masterItem.description;
-		console.log(description);
+		var name = $('<h3>').text(masterItem.title);
+		var price = $("<p>").text(masterItem.price);
+		var description = $('<p>').addClass('etsy-description').text(masterItem.description);
 		var link = masterItem.url;
-		console.log(link);
+		etsyLink = $("<a>").attr('href', link).text('Buy on Etsy');
+		// var div = $('<div>').addClass('img-responsive').css('backgroundImage', 'url(' + image + ')');
+		var itemImage = $('<div>').addClass('img-responsive');
+		itemImage.css('backgroundImage', 'url(' + image + ')');
 		var $etsyContainer = $('<div>').addClass("etsy-container");
-$(".results-container").append($etsyContainer.append("<div class='img-responsive'><img src=" + image +  "><div>" + "<h3>" + name + "</h3>" + "<p class='etsy-description'>" + description + "</p>" + "<p>" + price + "</p>" + "<a href='" + link + " target='_blank'>" + "Buy on Etsy" + "</a>" ));
-	} 
-	//practice again!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*************
+		// $etsyContainer.append(item);
+		$etsyContainer.append(itemImage, name, description, price, etsyLink)
+	$(".results-container").append($etsyContainer);
+	};
+// $('<.img-responsive>').css('background-image', 'url(' + image + ')'); 
+	//practice again!!!!!!!!!!!!<img src=" + image +  ">!!!!!!!!!!!!!!!!!!!!!!!!!*************
 };
 
 

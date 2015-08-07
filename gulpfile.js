@@ -20,7 +20,7 @@ gulp.task('jshint', function(){
 
 gulp.task('watch', function(){
 	gulp.watch('styles/*scss', ['styles']);
-	gulp.watch('js/*.js', ['jshint'])
+	gulp.watch('js/*.js', ['jshint']);
 });
 
 gulp.task('default', ['watch']);

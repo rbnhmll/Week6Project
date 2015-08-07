@@ -38,6 +38,13 @@ h5 {
 	font-family: $serif;
 }
 
+h1 {
+    color: $lightgrey;
+    margin: 0;
+    margin-left: 2%;
+   font-size: 3rem;
+}
+
 h3 {
 	font-family: $sansSerif;
 	color: #666666;
@@ -152,8 +159,6 @@ input.submit {
 
 }
 
-
-
 .etsy-container {
 	display: flex;
 	width: 32%;
@@ -167,15 +172,19 @@ input.submit {
 	word-wrap: break-word;
 }
 
+.priceBuy {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
 .etsy-container p {
 	color: #85c655;
-	text-align: left;
 }
 
 .etsy-container a {
 	text-decoration: none;
 	color: #f56400;
-	text-align: left;
 	text-transform: uppercase;
 	font-size: 12px;
 }
@@ -222,6 +231,7 @@ p.etsy-description {
 }
 
 .show-more {
+	margin: 25px 0;
 	font-family: Arial,Helvetica,sans-serif;
 	color: white;
 	border: 1px solid;
@@ -229,8 +239,7 @@ p.etsy-description {
 	background: -webkit-linear-gradient(top, #98d0e0 2%, #68b8d1 8%, #4fa9c6 58%, #4fa9c6 95%, #4ca4c0);
 	cursor: pointer;
 	font-size: 15px;
-  	font-weight: bold;
-  	margin: 0;
-  	border-radius: 4px;
-  	padding: 4.8px;
+	font-weight: bold;
+	border-radius: 4px;
+	padding: 4.8px;
 }

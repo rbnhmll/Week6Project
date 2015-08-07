@@ -142,6 +142,12 @@ h4,
 h5 {
   font-family: "Times new roman"; }
 
+h1 {
+  color: #FCFCFC;
+  margin: 0;
+  margin-left: 2%;
+  font-size: 3rem; }
+
 h3 {
   font-family: "PT Sans", sans-serif;
   color: #666666;
@@ -249,14 +255,17 @@ input.submit {
   flex-direction: column;
   word-wrap: break-word; }
 
+.priceBuy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
 .etsy-container p {
-  color: #85c655;
-  text-align: left; }
+  color: #85c655; }
 
 .etsy-container a {
   text-decoration: none;
   color: #f56400;
-  text-align: left;
   text-transform: uppercase;
   font-size: 12px; }
 
@@ -295,6 +304,7 @@ p.etsy-description {
   display: block; }
 
 .show-more {
+  margin: 25px 0;
   font-family: Arial,Helvetica,sans-serif;
   color: white;
   border: 1px solid;
@@ -303,6 +313,5 @@ p.etsy-description {
   cursor: pointer;
   font-size: 15px;
   font-weight: bold;
-  margin: 0;
   border-radius: 4px;
   padding: 4.8px; }

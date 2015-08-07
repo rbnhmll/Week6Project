@@ -243,9 +243,15 @@ input.submit {
 
 .etsy-description {
   max-height: 200px;
+  height: 150px;
   overflow-y: auto;
   border: 1px solid #E4E4E1;
-  text-align: left; }
+  text-align: left;
+  /*background-color: red;*/
+  padding-right:5%;
+  padding-left:5%;
+  padding-top: 5%;
+   }
 
 .img-responsive {
   max-width: 100%;
@@ -288,4 +294,7 @@ input.submit {
   margin: 0;
   border-radius: 4px;
   padding: 4.8px; }
+
+
+
 >>>>>>> 1d8553fedecbd1e5c229e0545bb99e1fed331947

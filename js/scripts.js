@@ -1,7 +1,6 @@
 var app = {};
 app.location = "";
 app.keywords = {};
-app.offset = "";
 app.etsyResult = {};
 app.masterItem = {};
 app.image = {};
@@ -51,16 +50,32 @@ app.ajaxCall = function() {
 	});
 };
 
-app.runResults = function(etsyResult) {
+
+function truncate(name, charLength){
+   if (name.length > charLength)
+   return name.substring(0,charLength)+	'...';
+   else
+      return name;
+};
+
+//Trun function limits the character length of name and description
+
+
+
+ app.runResults = function(etsyResult) {
 
 	for (var i = 0; i < etsyResult.length; i++) {
 	//Define variables for API call stuff.
 		var masterItem = etsyResult[i];
 		// console.log(masterItem);
 		var image = masterItem.MainImage.url_fullxfull;
-		var name = $('<h3>').text(masterItem.title);
+		var name = $('<h3>').text(truncate(masterItem.title, 20));
 		var price = $("<p>").text(masterItem.price);
-		var description = $('<p>').addClass('etsy-description').text(masterItem.description);
+		var description = $('<p>').addClass('etsy-description').text(truncate(masterItem.description, 150));
+		console.log(masterItem);
+
+
+
 		var link = masterItem.url;
 		etsyLink = $("<a>").attr('href', link).text('Buy on Etsy');
 		// var div = $('<div>').addClass('img-responsive').css('backgroundImage', 'url(' + image + ')');
@@ -72,6 +87,7 @@ app.runResults = function(etsyResult) {
 	$(".results-container").append($etsyContainer);
 	}
 };
+
 
 $(".show-more").on("click", function(){
 	app.offset += 1;
@@ -86,3 +102,11 @@ $(".show-more").on("click", function(){
 $(function(){
 	app.init();
 });
+
+
+
+
+
+
+
+

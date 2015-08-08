@@ -56,6 +56,7 @@ app.ajaxCall = function() {
 
 	$.when(etsyCall).then(function(res) {
 		$(".nav-controls").removeClass("hide");
+		$(".background-image").addClass("hide");
 		var etsyResult = res.results;
 		// console.log(etsyResult);
 		app.runResults(etsyResult);
@@ -85,19 +86,20 @@ function truncate(name, charLength){
 	//Define variables for API call stuff.
 		var masterItem = etsyResult[i];
 		var image = masterItem.MainImage.url_fullxfull;
-		var name = $('<h3>').text(truncate(masterItem.title, 20));
+		var name = $('<h3>').text(truncate(masterItem.title, 45));
 		var price = $("<p>").text('$' + masterItem.price);
-		var description = $('<p>').addClass('etsy-description').text(truncate(masterItem.description, 150));
+		var description = $('<p>').addClass('etsy-description').text(truncate(masterItem.description, 350));
 		console.log(masterItem);
 		var link = masterItem.url;
 		etsyLink = $("<a target='_blank'>").attr('href', link).text('Buy on Etsy');
 		var makeDiv = $("<div>").addClass("priceBuy");
+		var descriptionContainer = $("<div>").addClass("descriptionContainer");
 		var itemImage = $('<div>').addClass('img-responsive');
 		itemImage.css('backgroundImage', 'url(' + image + ')');
 		var titleContainer = $('<div>').addClass("title-container");
 		var $etsyContainer = $('<div>').addClass("etsy-container");
 		
-		$etsyContainer.append(itemImage, titleContainer.append(name), description, makeDiv.append(price, etsyLink) ).fadeIn(1000);
+		$etsyContainer.append(itemImage, titleContainer.append(name), descriptionContainer.append(description), makeDiv.append(price, etsyLink) ).fadeIn(1000);
 	$(".results-container").append($etsyContainer);
 	}
 };

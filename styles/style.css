@@ -275,9 +275,15 @@ input.submit {
 
 .etsy-description {
   max-height: 200px;
+  height: 150px;
   overflow-y: auto;
   border: 1px solid #E4E4E1;
-  text-align: left; }
+  text-align: left;
+  /*background-color: red;*/
+  padding-right:5%;
+  padding-left:5%;
+  padding-top: 5%;
+   }
 
 p.etsy-description {
   font-size: 15px;

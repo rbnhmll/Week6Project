@@ -117,6 +117,8 @@ $(function(){
 	app.init();
 });
 
+$('.backToTop').smoothScroll();
+
 
 
 

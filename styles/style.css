@@ -136,6 +136,9 @@ html {
   font-family: "PT Sans", sans-serif;
   color: #222; }
 
+body {
+  background: #EAF6FC; }
+
 h1,
 h2,
 h4,
@@ -180,7 +183,11 @@ header.main {
   text-align: center; }
 
 .submit-form {
-  width: 60%; }
+  width: 60%;
+  display: flex;
+  align-items: baseline;
+  padding-top: 15px;
+  justify-content: space-around; }
 
 .submit {
   border-top-left-radius: 0;
@@ -195,16 +202,17 @@ header.main {
   font-weight: bold;
   margin: 0; }
 
-.city, .keyword {
-  width: 100%;
-  top: 50%;
+.city,
+.submit-container {
+  width: 50%; }
+
+.city,
+.keyword {
   border: 1px solid #CFCBC8;
   background: #f9f9f8;
-  margin-top: -17px;
   font-family: Arial,Helvetica,sans-serif;
   padding: 6px 10px;
   margin-left: 0;
-  height: 29.2px;
   font-size: 14px;
   box-shadow: inset 0 1px 2px #E9E9E8, 0 0 0 1000px #fbfbfa inset; }
 
@@ -217,7 +225,7 @@ header.main {
   border-bottom-right-radius: 0; }
 
 img.logo-image {
-  height: 40px; }
+  height: 50px; }
 
 h1 {
   color: #EC6333;

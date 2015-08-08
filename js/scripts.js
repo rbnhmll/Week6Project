@@ -17,13 +17,13 @@ app.grabInputs = function() {
 	
 	$(".submit").on("click", function(evnt){
 		evnt.preventDefault();
-		if ($(".city").val() == "" && $(".keyword").val() == "") {
+		if ($(".city").val() === "" && $(".keyword").val() === "") {
 			alert("Please fill in your city and keyword(s).");
 		}
-		else if ($(".city").val() == "") {
-			alert("Please fill in your city.")
+		else if ($(".city").val() === "") {
+			alert("Please fill in your city.");
 		}
-		else if ($(".keyword").val() == "") {
+		else if ($(".keyword").val() === "") {
 			alert("Please fill in your search keywords.");
 		}
 		else {
@@ -68,32 +68,36 @@ function truncate(name, charLength){
    return name.substring(0,charLength)+	'...';
    else
       return name;
-};
+}
 
 //Trun function limits the character length of name and description
 
 
 
  app.runResults = function(etsyResult) {
-
+ 	if (etsyResult.length === 0) {
+ 		var giphy = $("<img>").attr("src", "http://i.giphy.com/lrNS45C9Df904.gif").addClass("giphy");
+ 		var none = $("<h3>").text("Oops, your keywords do not return any results for your city. Try making your query more general. Or maybe it's just not your day? These things happen.");
+ 		$(".results-container").append(none.addClass("oops"), giphy);
+ 		$(".nav-controls").addClass("hide");
+ 	}
 	for (var i = 0; i < etsyResult.length; i++) {
 	//Define variables for API call stuff.
 		var masterItem = etsyResult[i];
-		// console.log(masterItem);
 		var image = masterItem.MainImage.url_fullxfull;
-
 		var name = $('<h3>').text(truncate(masterItem.title, 20));
-		var price = $("<p>").text(masterItem.price);
+		var price = $("<p>").text('$' + masterItem.price);
 		var description = $('<p>').addClass('etsy-description').text(truncate(masterItem.description, 150));
 		console.log(masterItem);
 		var link = masterItem.url;
-		etsyLink = $("<a>").attr('href', link).text('Buy on Etsy');
+		etsyLink = $("<a target='_blank'>").attr('href', link).text('Buy on Etsy');
 		var makeDiv = $("<div>").addClass("priceBuy");
 		var itemImage = $('<div>').addClass('img-responsive');
 		itemImage.css('backgroundImage', 'url(' + image + ')');
+		var titleContainer = $('<div>').addClass("title-container");
 		var $etsyContainer = $('<div>').addClass("etsy-container");
-		// $etsyContainer.append(item);
-		$etsyContainer.append(itemImage, name, description, makeDiv.append(price, etsyLink) ).fadeIn(1000);
+		
+		$etsyContainer.append(itemImage, titleContainer.append(name), description, makeDiv.append(price, etsyLink) ).fadeIn(1000);
 	$(".results-container").append($etsyContainer);
 	}
 };

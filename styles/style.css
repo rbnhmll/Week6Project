@@ -314,14 +314,15 @@ input.submit {
   display: inline-block;
   border: 1px solid #E4E4E1;
   min-width: 100%;
-  overflow-wrap: break-word; }
+  max-width: 100%;
+  word-wrap: break-word; }
 
 .etsy-description {
   text-align: left;
   font-size: 15px;
   color: #B2B2B2;
   padding: 5%;
-  overflow-wrap: break-word; }
+  word-wrap: break-word; }
 
 .img-responsive {
   max-width: 100%;

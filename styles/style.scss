@@ -48,9 +48,14 @@ h1 {
 h3 {
 	font-family: $sansSerif;
 	color: #666666;
-	font-size: 18px;
+	font-size: 1rem;
 	text-transform: uppercase;
 	text-align: left;
+}
+
+.wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 header.main {
@@ -60,11 +65,6 @@ header.main {
 	.wrapper {
 	padding: 20px 0;
 	}
-}
-
-.wrapper {
-	max-width: 1000px;
-	margin: 0 auto;
 }
 
 .banner-container {
@@ -264,7 +264,7 @@ justify-content: space-between;
 }
 
 .backToTop {
-	font-size: 3rem;
+	font-size: 2.5rem;
 	color: $orange;
 	margin: 0 auto;
 	display: block;
@@ -304,4 +304,53 @@ justify-content: space-between;
 	margin: 25px auto 100px auto;
 	border: 5px solid $grey;
 	border-radius: 5px;
+}
+
+
+
+
+					// Media Queries//
+					//--------------//
+
+@media all and (max-width: 1000px) {
+	header.main .wrapper {
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+}
+
+@media all and (max-width: 960px) {
+	.banner-container {
+		flex-direction: column;
+	}
+	
+	.logo-container,
+	.submit-form {
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 850px) {
+	.etsy-container {
+		width: 49%;
+	}
+}
+
+@media all and (max-width: 530px) {
+	.etsy-container {
+		justify-content: space-around;
+		width: 96%;
+		margin: 2%;
+		padding: 2%;
+	}
+}
+
+@media all and (max-width: 435px) {
+	h1 {
+		font-size: 1.8rem;
+	}
+
+	.logo-container h3 {
+		font-size: .8rem;
+	}
 }

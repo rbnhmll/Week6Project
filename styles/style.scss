@@ -356,3 +356,18 @@ justify-content: space-between;
 		font-size: .8rem;
 	}
 }
+
+@media all and (max-width: 400px) {
+	.city,
+	.keyword,
+	input.submit {
+		padding: 5px 3px;
+		font-size: .8rem;
+	}
+}
+
+@media all and (max-width: 345px) {
+	html {
+		font-size: 12px;
+	}
+}

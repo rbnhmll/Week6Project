@@ -312,7 +312,9 @@ input.submit {
 .descriptionContainer {
   height: 260px;
   display: inline-block;
-  border: 1px solid #E4E4E1; }
+  border: 1px solid #E4E4E1;
+  min-width: 100%;
+  overflow-wrap: break-word; }
 
 .etsy-description {
   text-align: left;

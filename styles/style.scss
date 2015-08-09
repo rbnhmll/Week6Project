@@ -32,8 +32,8 @@ body {
 
 h1,
 h2,
-h4,
-h5 {
+h3,
+h4 {
 	font-family: $serif;
 }
 
@@ -55,7 +55,7 @@ h3 {
 
 header.main {
 	background: $orange;
-	box-shadow: 0 1px 3px #ccc;
+	box-shadow: 0 1px 5px #555;
 	border-bottom: 2px solid $grey;
 	.wrapper {
 	padding: 20px 0;
@@ -176,7 +176,7 @@ input.submit {
 
 .main-footer {
 	background: $grey;
-	box-shadow: 0 1px 3px #555;
+	box-shadow: 0 -1px 5px #555;
 	color: $black;
 	position: relative;
 	bottom: 0;
@@ -185,7 +185,15 @@ input.submit {
 	p {
 		padding: 25px 0;
 		margin: 0;
-		text-align: center
+		text-align: center;
+		font-size: .8rem;
+	}
+	a {
+		color: $black;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -205,7 +213,6 @@ justify-content: space-between;
 	border: 1px solid $grey;
 	text-align: center;
 	flex-direction: column;
-	word-wrap: break-word;
 }
 
 .etsy-container .priceBuy {
@@ -235,7 +242,7 @@ justify-content: space-between;
 	font-size: 15px;
 	color: #B2B2B2;
 	padding: 5%;
-	word-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 
@@ -294,7 +301,7 @@ justify-content: space-between;
 }
 
 .giphy {
-	margin: 0 auto;
+	margin: 25px auto 100px auto;
 	border: 5px solid $grey;
 	border-radius: 5px;
 }

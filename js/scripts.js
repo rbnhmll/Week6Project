@@ -77,7 +77,7 @@ function truncate(name, charLength){
 
  app.runResults = function(etsyResult) {
  	if (etsyResult.length === 0) {
- 		var giphy = $("<img>").attr("src", "http://i.giphy.com/lrNS45C9Df904.gif").addClass("giphy");
+ 		var giphy = $("<img title='For Miguel'>").attr("src", "http://i.giphy.com/lrNS45C9Df904.gif").addClass("giphy animated jello");
  		var none = $("<h3>").text("Oops, your keywords do not return any results for your city. Try making your query more general. Or maybe it's just not your day? These things happen.");
  		$(".results-container").append(none.addClass("oops"), giphy);
  		$(".nav-controls").addClass("hide");

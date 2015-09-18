@@ -1,3 +1,4 @@
+// create app object.
 var app = {};
 app.location = "";
 app.keywords = {};
@@ -37,7 +38,7 @@ app.grabInputs = function() {
 	});
 };
 
-
+// Etsy AJAX call
 app.ajaxCall = function() {
 	var etsyCall = $.ajax({
 		url: "https://openapi.etsy.com/v2/listings/active.js",
@@ -53,7 +54,7 @@ app.ajaxCall = function() {
 			includes: "MainImage"
 		},
 	});
-
+	// The promise
 	$.when(etsyCall).then(function(res) {
 		$(".nav-controls").removeClass("hide");
 		$(".background-image").addClass("hide");
@@ -64,6 +65,7 @@ app.ajaxCall = function() {
 };
 
 
+//Truncate function limits the character length of name and description
 function truncate(name, charLength){
    if (name.length > charLength)
    return name.substring(0,charLength)+	'...';
@@ -71,7 +73,6 @@ function truncate(name, charLength){
       return name;
 }
 
-//Trun function limits the character length of name and description
 
 
 

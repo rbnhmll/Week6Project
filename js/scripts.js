@@ -73,9 +73,6 @@ function truncate(name, charLength){
       return name;
 }
 
-
-
-
  app.runResults = function(etsyResult) {
  	if (etsyResult.length === 0) {
  		var giphy = $("<img title='For Miguel'>").attr("src", "http://i.giphy.com/lrNS45C9Df904.gif").addClass("giphy animated jello");
@@ -106,15 +103,12 @@ function truncate(name, charLength){
 	}
 };
 
-
 $(".show-more").on("click", function(){
 	app.offset += 1;
 	app.offsetMultiplier = app.offset * 12;
 	//If you change the offset multiplier, be sure to change the number of results in the API call above.
 	app.ajaxCall();
 });
-
-
 
 $(function(){
 	app.init();
